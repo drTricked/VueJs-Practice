@@ -1,0 +1,35 @@
+const app = Vue.createApp({
+  data() {
+    return {
+      first: "",
+      second: "",
+      compatibility: "",
+      compMessage: "",
+    };
+  },
+  methods: {
+    findComp() {
+      fetch(
+        `https://love-calculator.p.rapidapi.com/getPercentage?fname${this.first}&sname=${this.second}`,
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key":
+              "52404fdeaamsh75354a96366b9cap17150cjsn13b2fa4f53df",
+            "x-rapidapi-host": "love-calculator.p.rapidapi.com",
+          },
+        }
+      )
+        .then((response) => {
+          response.text();
+          console.log(response);
+        })
+        .then((data) => console.log(data))
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+  },
+});
+
+app.mount("#app");
