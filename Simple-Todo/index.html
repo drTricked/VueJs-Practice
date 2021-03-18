@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://ez-css.now.sh" />
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+    <title>Simple Todo</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{title}}</h3>
+
+      <!-- Vue @submit => call the function when event submit -->
+      <form @submit.prevent="addTodo">
+        <label for="newTodo">New Todo</label>
+        <input v-model="newTodo" type="text" name="newTodo" id="newTodo" />
+        <button type="submit" name="button">Add</button>
+      </form>
+
+      <button @click="markAllDone()" type="button" name="button">
+        Mark all done
+      </button>
+
+      <!-- v-for mimicks a for each, allows you to use the each in the html -->
+      <!-- v-model => idea of binding -->
+      <ul>
+        <li v-for="todo in todos">
+          <input type="checkbox" v-model="todo.done" />
+          <span :class="{ done: todo.done }"> {{todo.title}} </span>
+          <button @click="removeTodo(todo)" type="button" name="button">
+            Remove
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
