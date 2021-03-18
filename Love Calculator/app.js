@@ -10,7 +10,7 @@ const app = Vue.createApp({
   methods: {
     findComp() {
       fetch(
-        `https://love-calculator.p.rapidapi.com/getPercentage?fname${this.first}&sname=${this.second}`,
+        `https://love-calculator.p.rapidapi.com/getPercentage?fname=${this.first}&sname=${this.second}`,
         {
           method: "GET",
           headers: {
@@ -21,11 +21,11 @@ const app = Vue.createApp({
           },
         }
       )
-        .then((response) => {
-          response.text();
-          console.log(response);
+        .then((response) => response.json())
+        .then((data) => {
+          this.compatibility = data.percentage;
+          this.compMessage = data.result;
         })
-        .then((data) => console.log(data))
         .catch((err) => {
           console.error(err);
         });
