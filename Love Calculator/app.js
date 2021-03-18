@@ -14,6 +14,7 @@ const app = Vue.createApp({
         {
           method: "GET",
           headers: {
+            //update : for future references and practice just put this in a config or env file
             "x-rapidapi-key":
               "52404fdeaamsh75354a96366b9cap17150cjsn13b2fa4f53df",
             "x-rapidapi-host": "love-calculator.p.rapidapi.com",
