@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="calculator">
+        <div class="box value">{{current}}</div>
+        <div @click="setOp('+')" class="op box">+</div>
+        <div @click="setOp('-')" class="op box">-</div>
+        <div @click="setOp('*')" class="op box">*</div>
+        <div @click="setOp('/')" class="op box">/</div>
+
+        <div @click="number(7)" class="box">7</div>
+        <div @click="number(8)" class="box">8</div>
+        <div @click="number(9)" class="box">9</div>
+        <div @click="number(4)" class="box">4</div>
+        <div @click="number(5)" class="box">5</div>
+        <div @click="number(6)" class="box">6</div>
+        <div @click="number(1)" class="box">1</div>
+        <div @click="number(2)" class="box">2</div>
+        <div @click="number(3)" class="box">3</div>
+        <div @click="number(0)" class="box">0</div>
+        <div @click="number('.')" class="box">.</div>
+        <div @click="reset()" class="box">C</div>
+
+        <div @click="eval()" class="equals box">=</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
