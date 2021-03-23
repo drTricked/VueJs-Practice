@@ -1,33 +1,35 @@
 <template>
   <div id="movie-container">
     Movie List
-    <ul>
-      <li style="color: white" v-for="(movie, index) in movies" :key="movie.id">
-        Index: {{ index }} :{{ movie.name }}
-      </li>
-    </ul>
+    <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
   </div>
 </template>
 
 <script>
+  import Movie from "./Movie";
+
   export default {
     data() {
       return {
-        movies: [
-          {
-            id: 1,
-            name: "movie-1",
-          },
-          {
-            id: 2,
-            name: "movie-2",
-          },
-          {
-            id: 3,
-            name: "movie-3",
-          },
-        ],
+        // movies: [],
       };
+    },
+    components: {
+      Movie,
+    },
+    // similar to methods: {} except holds cached data
+    // will not recall if dependency does not change
+    computed: {
+      movies: {
+        get() {
+          return this.$store.getters.getMovies;
+        },
+      },
+    },
+    // alternative
+    // for some reason this way is giving me internal vue bug?
+    created() {
+      this.$store.dispatch("fetchMovies");
     },
   };
 </script>

@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+/firestore-movie-importer
 
 # local env files
 .env.local

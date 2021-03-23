@@ -7,6 +7,13 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/movie-preview/:id",
+    name: "moviePreview",
+    //lazy import
+    component: () => import("../views/MoviePreview"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
