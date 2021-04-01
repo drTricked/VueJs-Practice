@@ -1,26 +1,37 @@
 <template>
   <div class="card-container">
-    <img
-      class="product-img"
-      src="https://images-americanas.b2w.io/produtos/01/00/item/132165/8/132165801G1.jpg"
-      alt=""
-    />
-    <h2 class="product-name">Notebook:</h2>
-    <span>Price: $2.00</span>
+    <img class="product-img" :src="img" alt="" />
+    <h2 class="product-name">{{ name }}</h2>
+    <span>Price: ${{ price }}</span>
   </div>
 </template>
 
 <script>
-  export default {};
+  export default {
+    props: {
+      name: {
+        type: String,
+        default: "",
+      },
+      img: {
+        type: String,
+        default: "",
+      },
+      price: {
+        type: String,
+        default: "",
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
   .card-container {
-    border: solid 1px red;
-    width: 25%;
-    min-height: 100%;
-    //     max-height: 60vh;
-
+    //     border: solid 1px red;
+    width: 80%;
+    //     margin: 0 10px;
+    //     min-height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     .product-img {
       max-width: 100%;
     }
