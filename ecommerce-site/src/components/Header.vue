@@ -6,7 +6,11 @@
       </div>
       <div id="sidelinks">
         <ul>
-          <li v-for="(item, index) in links" :key="index">
+          <li
+            @click="if (item === 'Cart') $router.push('/cart');"
+            v-for="(item, index) in links"
+            :key="index"
+          >
             {{ item }}
           </li>
         </ul>

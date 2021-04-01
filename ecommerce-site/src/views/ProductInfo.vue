@@ -13,7 +13,7 @@
         nisi, delectus corrupti incidunt dolorem maxime quibusdam? Aspernatur
         soluta animi aliquam?
       </p>
-      <button>Add to Cart</button>
+      <button @click="addToCart">Add to Cart</button>
     </div>
   </div>
 </template>
@@ -37,6 +37,11 @@
     },
     components: {
       Header,
+    },
+    methods: {
+      addToCart() {
+        this.$store.dispatch("add", this.product);
+      },
     },
     created() {
       // might be able to just do parseInt instead

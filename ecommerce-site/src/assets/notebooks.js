@@ -4,7 +4,7 @@ const notebooks = [
     name: "Notebook Samsung Essentials E21 Intel Celeron Dual Core",
     img:
       "https://images-americanas.b2w.io/produtos/01/00/item/132165/8/132165801G1.jpg",
-    price: "2.00",
+    price: "2.50",
   },
   {
     id: 2,

@@ -23,6 +23,13 @@ const routes = [
     component: () => import("../views/ProductInfo.vue"),
     props: true,
   },
+  {
+    path: "/cart",
+    name: "Cart",
+    //lazy import
+    component: () => import("../views/Cart.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
